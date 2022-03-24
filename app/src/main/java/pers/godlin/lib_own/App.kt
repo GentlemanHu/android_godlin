@@ -26,6 +26,7 @@ class App : Application() {
         BRV.modelId = BR.m
         DevTool.enabled = true
 
+
         FloatingX.init {
             setLayout(R.layout.item_floating_view)
             setEnableAllBlackClass(true)
