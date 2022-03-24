@@ -2,32 +2,25 @@ package pers.godlin.lib_own
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
-import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.lifecycle.lifecycleScope
 import com.drake.brv.utils.addModels
 import com.drake.brv.utils.linear
 import com.drake.brv.utils.models
 import com.drake.brv.utils.setup
 import kotlinx.coroutines.launch
-import org.w3c.dom.Text
-import pers.godlin.lib_dsl_ui.ext.addToViewGroup
-import pers.godlin.lib_dsl_ui.layouts.MLinearLayout
-import pers.godlin.lib_dsl_ui.views.MView
+import pers.godlin.lib_godlin.ext.addToViewGroup
+import pers.godlin.lib_godlin.layouts.MLinearLayout
+import pers.godlin.lib_godlin.views.MView
 import pers.godlin.lib_own.job.scheduleRepeatedly
 import pers.godlin.lib_own.model.Card
 import pers.godlin.lib_own.ui.HomeActivity
 import splitties.activities.start
-import splitties.experimental.InternalSplittiesApi
 import splitties.views.dsl.core.button
-import splitties.views.dsl.core.contentView
-import splitties.views.dsl.core.view
 import splitties.views.dsl.recyclerview.recyclerView
 import kotlin.random.Random
-import kotlin.random.nextInt
 
 class MainActivity : AppCompatActivity() {
 

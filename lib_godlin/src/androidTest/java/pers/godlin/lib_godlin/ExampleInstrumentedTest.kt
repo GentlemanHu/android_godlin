@@ -1,4 +1,4 @@
-package pers.godlin.lib_dsl_ui
+package pers.godlin.lib_godlin
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

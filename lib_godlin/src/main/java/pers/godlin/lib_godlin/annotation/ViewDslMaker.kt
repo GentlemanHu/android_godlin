@@ -1,4 +1,4 @@
-package pers.godlin.lib_dsl_ui.annotation
+package pers.godlin.lib_godlin.annotation
 
 /**
  * @author: gentlemanhu

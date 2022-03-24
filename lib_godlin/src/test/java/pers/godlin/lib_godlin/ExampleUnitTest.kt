@@ -1,4 +1,4 @@
-package pers.godlin.lib_dsl_ui
+package pers.godlin.lib_godlin
 
 import org.junit.Test
 

@@ -1,4 +1,4 @@
-package pers.godlin.lib_dsl_ui.ext
+package pers.godlin.lib_godlin.ext
 
 import android.view.View
 import android.view.ViewGroup

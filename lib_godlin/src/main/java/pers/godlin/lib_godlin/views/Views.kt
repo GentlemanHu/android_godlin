@@ -1,11 +1,9 @@
-package pers.godlin.lib_dsl_ui.views
+package pers.godlin.lib_godlin.views
 
-import android.content.Context
-import android.media.Image
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
-import pers.godlin.lib_dsl_ui.annotation.ViewDslMaker
+import pers.godlin.lib_godlin.annotation.ViewDslMaker
 
 /**
  * @author: gentlemanhu

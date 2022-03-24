@@ -1,4 +1,4 @@
-package pers.godlin.lib_dsl_ui.layouts
+package pers.godlin.lib_godlin.layouts
 
 import android.content.Context
 import android.widget.LinearLayout
