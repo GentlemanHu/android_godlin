@@ -1,9 +1,12 @@
 package pers.godlin.lib_godlin.views
 
+import android.content.Context
+import android.util.AttributeSet
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import pers.godlin.lib_godlin.annotation.ViewDslMaker
+import java.lang.reflect.Constructor
 
 /**
  * @author: gentlemanhu
@@ -38,9 +41,19 @@ inline fun <reified T : View> ViewGroup.MView(init: (@ViewDslMaker T).() -> Unit
         MultiAutoCompleteTextView::class.java -> MultiAutoCompleteTextView(context)
         RatingBar::class.java -> RatingBar(context)
         SeekBar::class.java -> SeekBar(context)
-        else -> null
+        else -> T::class.java.viewConstructor().newInstance(this)
     }
     view?.let {
         addView((it as T).apply(init))
     }
+}
+
+@Suppress("UNCHECKED_CAST")
+fun <V : View> Class<V>.viewConstructor(): Constructor<V> {
+    return cachedViewConstructors[this] as Constructor<V>?
+        ?: getConstructor(Context::class.java).also { cachedViewConstructors[this] = it }
+}
+
+private val cachedViewConstructors by lazy(LazyThreadSafetyMode.PUBLICATION) {
+    mutableMapOf<Class<out View>, Constructor<out View>>()
 }
