@@ -20,6 +20,7 @@ import splitties.toast.longToast
  * @date: 2022/3/10
  */
 class App : Application() {
+
     override fun onCreate() {
         super.onCreate()
 

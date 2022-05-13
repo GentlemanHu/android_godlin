@@ -23,10 +23,19 @@ fun ViewGroup.MImageView(init: (@ViewDslMaker ImageView).() -> Unit) {
 
 
 /**
- * 添加view
- * TODO: null处理
+ * OnClick
  */
-inline fun <reified T : View> ViewGroup.MView(init: (@ViewDslMaker T).() -> Unit) {
+fun View.onClick(clickListener: () -> Unit) {
+    this.setOnClickListener {
+        clickListener()
+    }
+}
+
+/**
+ * 添加view
+ *
+ */
+inline fun <reified T : View> ViewGroup.mView(init: (@ViewDslMaker T).() -> Unit) {
     val view = when (T::class.java) {
         TextView::class.java -> TextView(context)
         Button::class.java -> Button(context)
@@ -41,7 +50,7 @@ inline fun <reified T : View> ViewGroup.MView(init: (@ViewDslMaker T).() -> Unit
         MultiAutoCompleteTextView::class.java -> MultiAutoCompleteTextView(context)
         RatingBar::class.java -> RatingBar(context)
         SeekBar::class.java -> SeekBar(context)
-        else -> T::class.java.viewConstructor().newInstance(this)
+        else -> T::class.java.viewConstructor().newInstance(this.context)
     }
     view?.let {
         addView((it as T).apply(init))

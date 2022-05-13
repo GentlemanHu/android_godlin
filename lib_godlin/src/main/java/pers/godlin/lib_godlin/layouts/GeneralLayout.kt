@@ -2,6 +2,7 @@ package pers.godlin.lib_godlin.layouts
 
 import android.content.Context
 import android.view.ViewGroup
+import pers.godlin.lib_godlin.views.viewConstructor
 
 /**
  * @author: gentlemanhu
@@ -9,5 +10,5 @@ import android.view.ViewGroup
  */
 
 inline fun <reified T : ViewGroup> Context.layout(init: T.() -> Unit): T {
-    return T::class.java.getConstructor(Context::class.java).newInstance(this).apply(init)
+    return T::class.java.viewConstructor().newInstance(this).apply(init)
 }
