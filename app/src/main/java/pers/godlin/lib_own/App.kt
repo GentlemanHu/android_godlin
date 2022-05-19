@@ -5,6 +5,7 @@ import android.app.ActivityManager
 import android.app.Application
 import android.os.Bundle
 import android.view.Gravity
+import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.FragmentActivity
 import com.drake.brv.utils.BRV
 import com.drake.debugkit.DevTool
@@ -12,6 +13,7 @@ import com.drake.debugkit.dev
 import com.drake.net.NetConfig
 import com.petterp.floatingx.FloatingX
 import com.petterp.floatingx.assist.Direction
+import pers.godlin.lib_godlin.layouts.layout
 import pers.godlin.lib_own.utils.MyActivityManager
 import splitties.toast.longToast
 
@@ -38,11 +40,13 @@ class App : Application() {
             setEnableTouch(true)
             setOnClickListener {
                 (MyActivityManager.getInstance().currentActivity as? FragmentActivity)?.let {
-                    it.dev {
-                        function {
-                            longToast("哈哈哈")
-                        }
-                    }
+//                    it.dev {
+//                        function {
+//                            longToast("哈哈哈")
+//                        }
+//                    }
+                    val dialog = AlertDialog.Builder(it).create()
+
                 }
             }
             enableFx()

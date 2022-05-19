@@ -4,13 +4,11 @@ plugins {
     id 'maven-publish'
 }
 
-ext{
+ext {
     mVersion = "1.0.2"
 }
-
 android {
     compileSdk 30
-
     defaultConfig {
         minSdk 21
         targetSdk 30
@@ -73,12 +71,11 @@ dependencies {
     api 'com.github.liangjingkanji:spannable:1.0.4'
 }
 
-afterEvaluate{
-    publishing{
-        publications{
-            release(MavenPublication){
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
                 from components.release
-
                 groupId = 'com.github.GentlemanHu'
                 artifactId = 'lib_godlin'
                 version = mVersion
