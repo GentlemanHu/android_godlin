@@ -1,6 +1,5 @@
 package pers.godlin.lib_own.ui
 
-
 import android.view.ViewGroup
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.RecyclerView
@@ -18,6 +17,8 @@ import pers.godlin.lib_own.job.scheduleRepeatedly
 import pers.godlin.lib_own.model.Card
 import pers.godlin.lib_own.model.RecyclerViewData
 import pers.godlin.lib_own.ui.HomeActivity.HomeUI.loadRecyclerView
+import java.util.logging.Logger
+import kotlin.math.log
 
 
 /**
@@ -50,6 +51,10 @@ class HomeActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main),
                     }
                 }
             }
+        }
+
+        while (true){
+            println("xxxx---无限循环")
         }
     }
 

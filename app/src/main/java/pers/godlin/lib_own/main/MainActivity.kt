@@ -11,6 +11,8 @@ import com.drake.brv.utils.linear
 import com.drake.brv.utils.models
 import com.drake.brv.utils.setup
 import com.drake.tooltip.toast
+
+import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import pers.godlin.lib_godlin.ext.addToViewGroup
 import pers.godlin.lib_godlin.ext.viewModel
@@ -23,9 +25,12 @@ import pers.godlin.lib_own.job.scheduleRepeatedly
 import pers.godlin.lib_own.model.Card
 import pers.godlin.lib_own.ui.HomeActivity
 import splitties.activities.start
+import splitties.coroutines.suspendLazy
+import splitties.init.injectAsAppCtx
 
 import splitties.views.dsl.recyclerview.recyclerView
 import kotlin.random.Random
+import kotlin.reflect.KProperty
 
 class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
 
@@ -57,7 +62,12 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
                         }
                     }
                     models =
-                        listOf(Card(1, "你好"), Card(2, "哈喽"), Card(3, "哈喽----666"), Card(4, "777----666"))
+                        listOf(
+                            Card(1, "你好"),
+                            Card(2, "哈喽"),
+                            Card(3, "哈喽----666"),
+                            Card(4, "777----666")
+                        )
                 }
                 recyclerView().apply {
                     linear()
@@ -65,7 +75,12 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
                         addType<Card>(R.layout.item_card)
                     }
                     models =
-                        listOf(Card(1, "你好"), Card(2, "哈喽"), Card(3, "哈喽----666"), Card(4, "777----666"))
+                        listOf(
+                            Card(1, "你好"),
+                            Card(2, "哈喽"),
+                            Card(3, "哈喽----666"),
+                            Card(4, "777----666")
+                        )
                 }.addToViewGroup(this)
             }
 
