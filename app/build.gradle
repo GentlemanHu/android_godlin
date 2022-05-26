@@ -44,4 +44,5 @@ dependencies {
     androidTestImplementation 'androidx.test:monitor:1.5.0'
 
     implementation 'me.zhanghai.android.fastscroll:library:1.1.7'
+    implementation("net.orandja.shadowlayout:shadowlayout:1.0.1")
 }

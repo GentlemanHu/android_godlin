@@ -10,7 +10,7 @@ import android.widget.LinearLayout
 /**
  * 返回线性布局
  */
-fun Context.MLinearLayout(
+inline fun Context.mLinearLayout(
     mOrientation: Int = LinearLayout.HORIZONTAL,
     init: LinearLayout.() -> Unit
 ): LinearLayout {

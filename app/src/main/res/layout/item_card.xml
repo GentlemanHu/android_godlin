@@ -11,19 +11,37 @@
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:paddingVertical="15dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:paddingVertical="15dp">
 
-        <TextView
+        <net.orandja.shadowlayout.ShadowLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@{m.name}"
-            android:id="@+id/tvName"
-            android:textColor="@color/yellow_900"
+            android:layout_gravity="center"
+            android:background="@drawable/bg_bubble_dialog"
+            android:padding="8dp"
+            app:shadow_cast_only_background="true"
+            app:shadow_color="#808"
+            app:shadow_downscale="1"
+            app:shadow_radius="8"
+            app:shadow_with_color="false"
+            app:shadow_with_css_scale="true"
+            app:shadow_with_dpi_scale="true"
+            app:shadow_x_shift="-1dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:shadow_y_shift="2dp">
+
+            <TextView
+                android:id="@+id/tvName"
+                tvTextSpannable="@{m.name}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:autoLink="web"
+                android:textColor="@color/red_100" />
+        </net.orandja.shadowlayout.ShadowLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
