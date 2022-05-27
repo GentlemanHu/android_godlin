@@ -1,11 +1,14 @@
 package pers.godlin.lib_godlin.views
 
 import android.content.Context
+import android.os.Build.VERSION_CODES.P
 import android.util.AttributeSet
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
+import androidx.constraintlayout.widget.ConstraintLayout
 import pers.godlin.lib_godlin.annotation.ViewDslMaker
+import pers.godlin.lib_godlin.layouts.layout
 import java.lang.reflect.Constructor
 
 /**
@@ -30,6 +33,39 @@ fun View.onClick(clickListener: () -> Unit) {
         clickListener()
     }
 }
+
+
+inline val <reified T : ViewGroup> T.groupParams
+    get() = layoutParams
+
+
+
+//context(VG) inline fun <reified T : View, reified VG : ViewGroup> T.mLayoutParams( receiver: VG.() -> Unit) {
+//    layoutParams = ViewGroup.LayoutParams(context,null).apply()
+//}
+
+context(LinearLayout)
+inline fun <reified T : View> T.layoutParams(receiver: LinearLayout.LayoutParams.() -> Unit) {
+    layoutParams = LinearLayout.LayoutParams(context, null).apply(receiver)
+}
+
+context(RelativeLayout)
+inline fun <reified T : View> T.layoutParams(receiver: RelativeLayout.LayoutParams.() -> Unit) {
+    layoutParams = RelativeLayout.LayoutParams(context, null).apply(receiver)
+}
+
+context(ConstraintLayout)
+inline fun <reified T : View> T.layoutParams(receiver: ConstraintLayout.LayoutParams.() -> Unit) {
+    layoutParams = ConstraintLayout.LayoutParams(context, null).apply(receiver)
+}
+
+
+//inline fun <reified LT : ViewGroup.LayoutParams> ViewGroup.getTypedLayoutParams():LT {
+//    return when (this::class.java) {
+//        LinearLayout::class.java -> LinearLayout.LayoutParams(context, null)
+//        else -> ViewGroup.LayoutParams(context, null)
+//    }
+//}
 
 /**
  * 添加view

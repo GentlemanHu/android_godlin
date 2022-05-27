@@ -2,6 +2,7 @@ package pers.godlin.lib_own
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
@@ -14,6 +15,8 @@ import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import pers.godlin.lib_godlin.ext.addToViewGroup
 import pers.godlin.lib_godlin.layouts.mLinearLayout
+import pers.godlin.lib_godlin.views.layoutParams
+
 import pers.godlin.lib_godlin.views.mView
 import pers.godlin.lib_own.base.BaseActivity
 import pers.godlin.lib_own.databinding.ActivityMainBinding
@@ -33,7 +36,12 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
         val view = mLinearLayout {
             mView<TextView> {
                 text = "第一"
+                layoutParams {
+                    width = LinearLayout.LayoutParams.MATCH_PARENT
+                    height = LinearLayout.LayoutParams.MATCH_PARENT
+                }
             }
+
             mView<ImageView> {
                 setImageResource(R.drawable.ic_launcher_background)
             }
