@@ -70,6 +70,8 @@ dependencies {
     // 吐司
     api 'com.github.liangjingkanji:Tooltip:1.1.7'
 
+    // 日志
+    api 'com.elvishew:xlog:1.10.1'
     // Spannable
     api 'com.github.liangjingkanji:spannable:1.0.4'
 }

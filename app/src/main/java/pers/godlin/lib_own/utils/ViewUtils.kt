@@ -1,5 +1,6 @@
 package pers.godlin.lib_own.utils
 
+import android.graphics.Bitmap
 import android.view.View
 
 /**
@@ -9,5 +10,9 @@ import android.view.View
 
 
 inline fun View.addShadowEffect(){
+
+}
+
+fun Bitmap.blurNatively(){
 
 }

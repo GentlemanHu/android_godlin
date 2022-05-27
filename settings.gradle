@@ -10,3 +10,4 @@ dependencyResolutionManagement {
 rootProject.name = "lib_own"
 include ':app'
 include ':lib_godlin'
+include ':nativelib'

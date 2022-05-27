@@ -1,6 +1,7 @@
 package pers.godlin.lib_own.job
 
 import kotlinx.coroutines.*
+import pers.godlin.lib_own.App
 
 /**
  * @author: gentlemanhu
