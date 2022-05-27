@@ -38,25 +38,33 @@ fun View.onClick(clickListener: () -> Unit) {
 inline val <reified T : ViewGroup> T.groupParams
     get() = layoutParams
 
-
-
-//context(VG) inline fun <reified T : View, reified VG : ViewGroup> T.mLayoutParams( receiver: VG.() -> Unit) {
-//    layoutParams = ViewGroup.LayoutParams(context,null).apply()
+//
+//context(VG) inline fun <reified T : View, reified VG : ViewGroup> T.mLayoutParams( receiver: VG.LayoutParams.() -> Unit) {
+//    layoutParams = ViewGroup.LayoutParams(context,null).apply(receiver)
 //}
 
 context(LinearLayout)
 inline fun <reified T : View> T.layoutParams(receiver: LinearLayout.LayoutParams.() -> Unit) {
-    layoutParams = LinearLayout.LayoutParams(context, null).apply(receiver)
+    layoutParams = LinearLayout.LayoutParams(
+        LinearLayout.LayoutParams.WRAP_CONTENT,
+        LinearLayout.LayoutParams.WRAP_CONTENT
+    ).apply(receiver)
 }
 
 context(RelativeLayout)
 inline fun <reified T : View> T.layoutParams(receiver: RelativeLayout.LayoutParams.() -> Unit) {
-    layoutParams = RelativeLayout.LayoutParams(context, null).apply(receiver)
+    layoutParams = RelativeLayout.LayoutParams(
+        RelativeLayout.LayoutParams.WRAP_CONTENT,
+        RelativeLayout.LayoutParams.WRAP_CONTENT
+    ).apply(receiver)
 }
 
 context(ConstraintLayout)
 inline fun <reified T : View> T.layoutParams(receiver: ConstraintLayout.LayoutParams.() -> Unit) {
-    layoutParams = ConstraintLayout.LayoutParams(context, null).apply(receiver)
+    layoutParams = ConstraintLayout.LayoutParams(
+        ConstraintLayout.LayoutParams.WRAP_CONTENT,
+        ConstraintLayout.LayoutParams.WRAP_CONTENT
+    ).apply(receiver)
 }
 
 

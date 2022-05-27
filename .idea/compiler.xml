@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CompilerConfiguration">
-    <bytecodeTargetLevel target="14" />
+    <bytecodeTargetLevel target="14">
+      <module name="lib_own.app" target="11" />
+      <module name="lib_own.buildSrc" target="11" />
+      <module name="lib_own.buildSrc.main" target="11" />
+      <module name="lib_own.buildSrc.test" target="11" />
+      <module name="lib_own.lib_godlin" target="11" />
+      <module name="lib_own.nativelib" target="11" />
+    </bytecodeTargetLevel>
   </component>
 </project>

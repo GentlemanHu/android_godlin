@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.ImageView
 import android.widget.LinearLayout
+import android.widget.RelativeLayout
 import android.widget.TextView
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.RecyclerView
@@ -17,6 +18,7 @@ import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import pers.godlin.lib_godlin.ext.addToViewGroup
 import pers.godlin.lib_godlin.ext.viewModel
+import pers.godlin.lib_godlin.layouts.layout
 import pers.godlin.lib_godlin.layouts.mLinearLayout
 import pers.godlin.lib_godlin.views.layoutParams
 
@@ -58,6 +60,12 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
                 repeat(20) {
                     mView<TextView> {
                         text = "----"
+                        layoutParams {  }
+                    }
+                }
+                layout<RelativeLayout> {
+                    mView<TextView> {
+                        layoutParams {  }
                     }
                 }
                 mView<RecyclerView> {
