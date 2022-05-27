@@ -65,7 +65,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
                 }
                 layout<RelativeLayout> {
                     mView<TextView> {
-                        layoutParams {  }
+
                     }
                 }
                 mView<RecyclerView> {
