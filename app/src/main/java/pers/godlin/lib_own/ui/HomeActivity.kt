@@ -3,7 +3,10 @@ package pers.godlin.lib_own.ui
 import android.view.ViewGroup
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.RecyclerView
-import com.drake.brv.utils.*
+import com.drake.brv.utils.addModels
+import com.drake.brv.utils.linear
+import com.drake.brv.utils.models
+import com.drake.brv.utils.setup
 import com.drake.tooltip.toast
 import kotlinx.coroutines.launch
 import pers.godlin.lib_godlin.ext.viewModel
@@ -11,7 +14,6 @@ import pers.godlin.lib_godlin.views.mView
 import pers.godlin.lib_own.R
 import pers.godlin.lib_own.adapter.setOnItemClickDispatcherListener
 import pers.godlin.lib_own.base.BaseActivity
-import pers.godlin.lib_own.base.BaseViewModel
 import pers.godlin.lib_own.databinding.ActivityMainBinding
 import pers.godlin.lib_own.job.scheduleRepeatedly
 import pers.godlin.lib_own.model.Card
