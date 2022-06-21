@@ -17,8 +17,6 @@ import pers.godlin.lib_own.job.scheduleRepeatedly
 import pers.godlin.lib_own.model.Card
 import pers.godlin.lib_own.model.RecyclerViewData
 import pers.godlin.lib_own.ui.HomeActivity.HomeUI.loadRecyclerView
-import java.util.logging.Logger
-import kotlin.math.log
 
 
 /**
