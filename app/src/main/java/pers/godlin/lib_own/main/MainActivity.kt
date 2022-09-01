@@ -3,6 +3,7 @@ package pers.godlin.lib_own.main
 import android.os.Bundle
 import android.view.MotionEvent
 import android.widget.ImageView
+import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.lifecycle.lifecycleScope
 import com.drake.brv.utils.addModels
@@ -13,6 +14,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import pers.godlin.lib_godlin.ext.addToViewGroup
+import pers.godlin.lib_godlin.ext.asSpecificLayoutParams
 import pers.godlin.lib_godlin.ext.viewModel
 import pers.godlin.lib_godlin.layouts.mLinearLayout
 import pers.godlin.lib_godlin.views.mView
@@ -24,6 +26,7 @@ import pers.godlin.lib_own.model.Card
 import pers.godlin.lib_own.ui.widget.MyView
 import pers.godlin.lib_own.utils.eLog
 import splitties.views.dsl.recyclerview.recyclerView
+import java.util.*
 import kotlin.random.Random
 
 class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
@@ -120,6 +123,9 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
 //            scheduleRepeatedly(Random.nextLong(500L, 2000L), 300) {
 //                rv.addModels(listOf(Card(Random.nextInt(), Random.nextBytes(5).toString())))
 //            }
+            val p =
+                binding.container.layoutParams.asSpecificLayoutParams<LinearLayout.LayoutParams>()
+
         }
 
 

@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.os.postDelayed
 import com.drake.net.log.LogRecorder
+import pers.godlin.lib_godlin.R
 
 /**
  * @author: gentlemanhu
@@ -33,4 +34,8 @@ inline fun delayTimeRun(delay: Long = 500L, crossinline action: () -> Unit = {})
             Log.e("延迟执行", "delayTimeRun: ${e.stackTrace}")
         }
     }, delay)
+}
+
+inline fun <reified R:ViewGroup.LayoutParams> ViewGroup.LayoutParams.asSpecificLayoutParams():R{
+    return this as R
 }
